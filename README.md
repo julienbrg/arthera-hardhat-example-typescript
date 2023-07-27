@@ -27,10 +27,10 @@ cp .env.example .env
 Add your own private key in the `.env` file, then: 
 
 ```
-npx hardhat run scripts/deploy.js --network arthera-testnet
+npx hardhat run scripts/deploy.ts --network arthera-testnet
 ```
 
-You can use the `increment.js` script to increment the value of `x`: 
+You can use the `increment.ts` script to increment the value of `x`: 
 
 ```
 npx hardhat run scripts/increment.js --network arthera-testnet

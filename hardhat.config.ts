@@ -11,6 +11,8 @@ const {
   GOERLI_TESTNET_PRIVATE_KEY, 
   GOERLI_ETHERSCAN_API_KEY, 
 
+  ARTHERA_TESTNET_PRIVATE_KEY,
+
 } = process.env;
 
 const config: HardhatUserConfig = {
@@ -34,6 +36,11 @@ const config: HardhatUserConfig = {
     'goerli': {
       url: GOERLI_TESTNET_ENDPOINT_URL as string,
       accounts: GOERLI_TESTNET_PRIVATE_KEY !== undefined ? [GOERLI_TESTNET_PRIVATE_KEY] : [],
+    },
+    'arthera-testnet': {
+      url: 'https://rpc-test.arthera.net',
+      chainId: 10243,
+      accounts: ARTHERA_TESTNET_PRIVATE_KEY !== undefined ? [ARTHERA_TESTNET_PRIVATE_KEY] : []
     }
   }, 
   etherscan: {
