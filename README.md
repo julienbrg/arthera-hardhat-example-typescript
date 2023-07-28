@@ -27,10 +27,10 @@ cp .env.example .env
 Add your own private key in the `.env` file, then: 
 
 ```
-npx hardhat run scripts/deploy.js --network arthera-testnet
+npx hardhat run scripts/deploy.ts --network arthera-testnet
 ```
 
-You can use the `increment.js` script to increment the value of `x`: 
+You can use the `increment.ts` script to increment the value of `x`: 
 
 ```
 npx hardhat run scripts/increment.js --network arthera-testnet
@@ -49,7 +49,7 @@ _Note: the Incrementor contract is [already verified](https://explorer-test.arth
 
 ## Versions
 
-- Node [v18.15.0](https://nodejs.org/uk/blog/release/v18.15.0/)
+- Node [v20.3.0](https://nodejs.org/uk/blog/release/v20.3.0/)
 - NPM [v9.5.0](https://github.com/npm/cli/releases/tag/v9.5.0)
 - Hardhat [v2.17.0](https://github.com/NomicFoundation/hardhat/releases/tag/hardhat%402.17.0)
 - OpenZeppelin Contracts [v4.9.2](https://github.com/OpenZeppelin/openzeppelin-contracts/releases/tag/v4.9.2)
