@@ -30,7 +30,9 @@ Add your own private key in the `.env` file, then:
 npx hardhat run scripts/deploy.ts --network arthera-testnet
 ```
 
-You can use the `increment.ts` script to increment the value of `x`: 
+## Use
+
+Change the contract address in the `increment.ts` script, and: 
 
 ```
 npx hardhat run scripts/increment.js --network arthera-testnet
