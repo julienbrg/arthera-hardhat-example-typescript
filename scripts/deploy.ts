@@ -1,16 +1,16 @@
-const color = require("cli-color")
+import color from "cli-color"
 var msg = color.xterm(39).bgXterm(128);
 
-async function main() {
+async function deploy() {
 
-  const Incrementor = await ethers.getContractFactory("Incrementor");
-  const incrementor = await Incrementor.deploy(0);
-  await incrementor.waitForDeployment();
+  const Keita = await ethers.getContractFactory("Keita");
+  const keita = await Keita.deploy();
+  await keita.waitForDeployment();
 
-  console.log('\nIncrementor contract deployed at', msg(await incrementor.getAddress()));
+  console.log('\nKeita contract deployed at', msg(await keita.getAddress()));
 }
 
-main().catch((error) => {
+deploy().catch((error) => {
   console.error(error);
   process.exitCode = 1;
 });
