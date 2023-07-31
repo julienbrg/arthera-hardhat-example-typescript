@@ -1,5 +1,7 @@
 # Arthera Hardhat Template
 
+An example implementation of an app that's using the native subscriptions available on Arthera. 
+
 ## Motivation
 
 Facilitate the prototyping of decentralized apps to deploy to Arthera Testnet.
@@ -32,10 +34,16 @@ npx hardhat run scripts/deploy.ts --network arthera-testnet
 
 ## Use
 
-Change the contract address in the `increment.ts` script, and: 
+Change the contract address in the `whitelist.ts` script, and: 
 
 ```
 npx hardhat run scripts/increment.js --network arthera-testnet
+```
+
+Then run the `dance.ts` to increment the value of `wins`: 
+
+```
+npx hardhat run scripts/dance.js --network arthera-testnet
 ```
 
 ## Contract verification
