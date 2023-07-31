@@ -2,6 +2,7 @@ import { HardhatUserConfig } from "hardhat/config";
 import "@nomicfoundation/hardhat-toolbox";
 import * as dotenv from "dotenv";
 import "@nomicfoundation/hardhat-verify";
+import "hardhat-flat-exporter";
 
 dotenv.config();
 
@@ -47,6 +48,11 @@ const config: HardhatUserConfig = {
     apiKey: {
       goerli: GOERLI_ETHERSCAN_API_KEY || ""
     },
+  },
+  flattenExporter: {
+    src: "./contracts",
+    path: "./flat",
+    clear: true,
   },
 };
 
