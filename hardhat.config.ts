@@ -42,6 +42,16 @@ const config: HardhatUserConfig = {
       url: 'https://rpc-test.arthera.net',
       chainId: 10243,
       accounts: ARTHERA_TESTNET_PRIVATE_KEY !== undefined ? [ARTHERA_TESTNET_PRIVATE_KEY] : []
+    },
+    'arthera-devnet': {
+      url: 'https://rpc-dev.arthera.net',
+      chainId: 10245,
+      accounts: ARTHERA_TESTNET_PRIVATE_KEY !== undefined ? [ARTHERA_TESTNET_PRIVATE_KEY] : []
+    },
+    'fakenet': {
+      url: 'http://localhost:18545',
+      chainId: 10244,
+      accounts: ARTHERA_TESTNET_PRIVATE_KEY !== undefined ? [ARTHERA_TESTNET_PRIVATE_KEY ] : [] // "163f5f0f9a621d72fedd85ffca3d08d131ab4e812181e0d30ffd1c885d20aac7"
     }
   }, 
   etherscan: {
