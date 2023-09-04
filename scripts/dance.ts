@@ -1,11 +1,10 @@
 import fs from 'fs'
 import color from "cli-color"
 var msg = color.xterm(39).bgXterm(128);
+import {keitaContractAddress} from './utils'
 
 async function dance() {
 
-  // Replace with your own contract address
-  const keitaContractAddress = "0x509779185445f453C8eF59e3091d2bD197ADba9d"
   console.log("keitaContractAddress:", keitaContractAddress)
 
   const [signer] = await ethers.getSigners()
@@ -30,7 +29,7 @@ async function dance() {
   const balBefore = await ethers.provider.getBalance(signerAddress)
   console.log('Balance before the dance:', Number(balBefore))
 
-  const dance = await keita.dance()
+  const dance = await keita.dance({gasLimit:420000})
   await dance.wait(1)
   // console.log('\nDance call:', dance);
 

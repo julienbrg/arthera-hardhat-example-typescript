@@ -12,8 +12,6 @@ contract Keita is ERC165, Ownable {
 
     event Danced(uint indexed wins);
 
-    constructor() {}
-
     /// @notice Inrements `dances`
     function dance() public {
         wins += 1;
