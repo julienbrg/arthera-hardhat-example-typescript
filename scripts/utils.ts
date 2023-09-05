@@ -1,5 +1,8 @@
 import fs from 'fs'
 
+///// Keita contract /////
+export const keitaContractAddress = "0x4a576B85ee3E7dc311aE545A88F7B5DD5d9EF34A"
+
 ///// Arthera Subscribers contract  /////
 export const subscribersContractAddress = "0x000000000000000000000000000000000000Aa07" // https://docs.arthera.net/build/developing-sc/system-contracts/Subscribers
 export const subscribersContractAbi = [
@@ -1735,6 +1738,3 @@ export const subscribersContractAbi = [
     "type": "function"
   }
 ]
-
-///// Keita contract /////
-export const keitaContractAddress = "0x4a576B85ee3E7dc311aE545A88F7B5DD5d9EF34A"

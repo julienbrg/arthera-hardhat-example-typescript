@@ -41,19 +41,16 @@ async function whitelist() {
   console.log("planId:", planId)
 
   console.log('hasActiveSubscription:', await subscriberContract.hasActiveSubscription(keitaContractAddress))
-  
-  // const happyUser = "0x02bC12dAc51024f330fc79bFD651f66946aeF974"
-  // const happyUser = "0xE45079d379712E51408B00496D232407D9449F79"
-  // const happyUser = "0xbFBaa5a59e3b6c06afF9c975092B8705f804Fa1c" // Satoshi
-  // const happyUser = signerAddress // signerAddress
+
+  const happyUser = "0x90f83754A72A476f260c014cd908801b81e9a817"
   
   ///// call /////
 
-  // const wl = await subscriberContract.blacklistAccount(happyUser)
-  const wl = await subscriberContract.whitelistAccount(keitaContractAddress, "0x90f83754A72A476f260c014cd908801b81e9a817")
+  // const bl = await subscriberContract.blacklistAccount(happyUser)
+  const wl = await subscriberContract.whitelistAccount(keitaContractAddress, happyUser)
   await wl.wait(1)
 
-  const whitelistTx = await subscriberContract.isWhitelisted(keitaContractAddress, keitaOwner)
+  const whitelistTx = await subscriberContract.isWhitelisted(keitaContractAddress, happyUser)
   console.log("User is whitelisted:", whitelistTx)
 }
 

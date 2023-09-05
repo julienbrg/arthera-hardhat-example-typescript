@@ -29,7 +29,7 @@ async function dance() {
   const balBefore = await ethers.provider.getBalance(signerAddress)
   console.log('Balance before the dance:', Number(balBefore))
 
-  const dance = await keita.dance({gasLimit:420000})
+  const dance = await keita.dance({gasLimit:100000})
   await dance.wait(1)
   // console.log('\nDance call:', dance);
 
@@ -37,6 +37,7 @@ async function dance() {
   console.log('Balance  after the dance:', Number(balAfter))
   console.log('\nTotal amount of AA spent (tx fee):', msg(Number(balBefore-balAfter)))
   console.log('\nIncremented. ✅ \n\nThe value of wins is now', Number(await keita.wins()), '\n\nTx hash:', msg(dance.hash));
+  console.log('\nIncremented. ✅ \n\nThe value of wins is now', Number(await keita.wins()));
 }
 
 dance().catch((error) => {

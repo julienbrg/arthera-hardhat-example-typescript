@@ -1,6 +1,6 @@
 # Arthera Hardhat Template
 
-An example implementation of an app that's using the native subscriptions available on Arthera. 
+An example implementation of a simple app that's using the native subscriptions available on Arthera. 
 
 ## Motivation
 
@@ -34,16 +34,28 @@ npx hardhat run scripts/deploy.ts --network arthera-testnet
 
 ## Use
 
-Change the contract address in the `whitelist.ts` script, and: 
+Change the contract address in the `utils.ts` file (line 4), and go subscribe for a dapp plan on Arthera browser wallet: 
+
+[https://wallet-test-v2.arthera.net](https://wallet-test-v2.arthera.net/)
+
+Make sure you're logged in with the same wallet you used to deploy your contract.
+
+You can now whitelist a user:
 
 ```
-npx hardhat run scripts/increment.js --network arthera-testnet
+npx hardhat run scripts/whitelist.ts --network arthera-testnet
 ```
 
-Then run the `dance.ts` to increment the value of `wins`: 
+Then connect with that user wallet and:
 
 ```
-npx hardhat run scripts/dance.js --network arthera-testnet
+npx hardhat run scripts/dance.ts --network arthera-testnet
+```
+
+Remember to set a 100k gas limit when you call the dance function: 
+
+```
+await myContract.myFunction({gasLimit:100000})
 ```
 
 ## Versions
@@ -55,4 +67,4 @@ npx hardhat run scripts/dance.js --network arthera-testnet
 
 ## Support
 
-You can contact Julien via [Element](https://matrix.to/#/@julienbrg:matrix.org), [Telegram](https://t.me/julienbrg), [Twitter](https://twitter.com/julienbrg), [Discord](https://discordapp.com/users/julienbrg), or [LinkedIn](https://www.linkedin.com/in/julienberanger/).
+You can contact me via [Element](https://matrix.to/#/@julienbrg:matrix.org), [Telegram](https://t.me/julienbrg), [Twitter](https://twitter.com/julienbrg), [Discord](https://discordapp.com/users/julienbrg), or [LinkedIn](https://www.linkedin.com/in/julienberanger/).
