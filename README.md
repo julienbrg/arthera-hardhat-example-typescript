@@ -1,5 +1,7 @@
 # Arthera Hardhat Template
 
+An example implementation of a simple app that's using the native subscriptions available on Arthera. 
+
 ## Motivation
 
 Facilitate the prototyping of decentralized apps to deploy to Arthera Testnet.
@@ -30,22 +32,31 @@ Add your own private key in the `.env` file, then:
 npx hardhat run scripts/deploy.ts --network arthera-testnet
 ```
 
-You can use the `increment.ts` script to increment the value of `x`: 
+## Use
+
+Change the contract address in the `utils.ts` file (line 4), and go subscribe for a dapp plan on Arthera browser wallet: 
+
+[https://wallet-test-v2.arthera.net](https://wallet-test-v2.arthera.net/)
+
+Make sure you're logged in with the same wallet you used to deploy your contract.
+
+You can now whitelist a user:
 
 ```
-npx hardhat run scripts/increment.js --network arthera-testnet
+npx hardhat run scripts/whitelist.ts --network arthera-testnet
 ```
 
-## Contract verification
+Then connect with that user wallet and:
 
-- Go to the [Arthera Testnet explorer](https://explorer-test.arthera.net/), which is a fork of Blockscout
-- Paste you contract address
-- Click on the 'contract' tab
-- Click on the 'Verify and publish' button (top-right)
-- Fill out the form and paste your Solidity code
-- Click on 'Verify'
+```
+npx hardhat run scripts/dance.ts --network arthera-testnet
+```
 
-_Note: the Incrementor contract is [already verified](https://explorer-test.arthera.net/address/0x570DB771DeA83A2f6322E775886b0196cD770D7F?tab=contract) so you shouldn't need to do that if you keep it unchanged._
+Remember to set a 100k gas limit when you call the dance function: 
+
+```
+await myContract.myFunction({gasLimit:100000})
+```
 
 ## Versions
 
@@ -56,4 +67,4 @@ _Note: the Incrementor contract is [already verified](https://explorer-test.arth
 
 ## Support
 
-You can contact Julien via [Element](https://matrix.to/#/@julienbrg:matrix.org), [Telegram](https://t.me/julienbrg), [Twitter](https://twitter.com/julienbrg), [Discord](https://discordapp.com/users/julienbrg), or [LinkedIn](https://www.linkedin.com/in/julienberanger/).
+You can contact me via [Element](https://matrix.to/#/@julienbrg:matrix.org), [Telegram](https://t.me/julienbrg), [Twitter](https://twitter.com/julienbrg), [Discord](https://discordapp.com/users/julienbrg), or [LinkedIn](https://www.linkedin.com/in/julienberanger/).
